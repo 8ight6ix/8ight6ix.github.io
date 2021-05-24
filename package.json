@@ -1,15 +1,15 @@
 {
   "name": "8ight6ix.github.io",
-	"description" : "8ight6ix's Gallery Web Page",
+  "description": "8ight6ix's Gallery Web Page",
   "version": "0.0.0",
   "private": true,
   "author": {
-    "name" : "Hant",
-    "email" : "hangem422@gmail.com"
+    "name": "Hant",
+    "email": "hangem422@gmail.com"
   },
-  "repository" : {
+  "repository": {
     "type": "git",
-    "url" : "https://github.com/8ight6ix/8ight6ix.github.io"
+    "url": "https://github.com/8ight6ix/8ight6ix.github.io"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
@@ -31,12 +31,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -48,5 +42,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.3",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.3.0"
   }
 }
