@@ -4,15 +4,14 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    'react-app',
-    'react-app/jest',
     'airbnb',
     'plugin:react/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
-    'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
+    'plugin:@typescript-eslint/recommended',
+    // 'prettier/@typescript-eslint',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -39,6 +38,7 @@ module.exports = {
     },
     'import/resolver': {
       node: {
+        paths: ['src'],
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
     },
