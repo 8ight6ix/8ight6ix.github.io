@@ -1,29 +1,32 @@
 [
   {
+    "id": "SAMPLE-ID-01",
     "name": "Sample Work 01",
     "creator": "Unknown",
     "date": "2020.6.3",
     "type": "Sample",
     "keyword": ["Test", "Sample"],
     "description": "웹 갤러리 페이지 개발을 위한 첫번째 미리보기 샘플입니다.",
-    "path": "/src/artworks/smaple01.html"
+    "path": "/artworks/smaple01.html"
   },
   {
+    "id": "SAMPLE-ID-02",
     "name": "Sample Work 02",
     "creator": "Unknown",
     "date": "2020.6.3",
     "type": "Sample",
     "keyword": ["Test", "Sample"],
     "description": "웹 갤러리 페이지 개발을 위한 두번째 미리보기 샘플입니다.",
-    "path": "/src/artworks/smaple02.html"
+    "path": "/artworks/smaple02.html"
   },
   {
+    "id": "SAMPLE-ID-02",
     "name": "Sample Work 03",
     "creator": "Unknown",
     "date": "2020.6.3",
     "type": "Sample",
     "keyword": ["Test", "Sample"],
     "description": "웹 갤러리 페이지 개발을 위한 세번째 미리보기 샘플입니다.",
-    "path": "/src/artworks/smaple03.html"
+    "path": "/artworks/smaple03.html"
   }
 ]

@@ -5,8 +5,8 @@ import { compose, createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
 import { CONFIG } from 'constant';
-import rootReducer from 'modules/models/reducer';
-import rootSaga from 'modules/models/saga';
+import rootReducer from 'modules/store/reducer';
+import rootSaga from 'modules/store/saga';
 
 // Redux Devtool Global Type 설정
 declare global {

@@ -1,31 +1,32 @@
 import { createReducer } from 'typesafe-actions';
 import { Record } from 'immutable';
 
-import { action, Action } from 'modules/models/action/loading';
+import { action, Action } from 'modules/store/action/error';
 
-export interface LoadingState {
-  isLoading: boolean;
+export interface ErrorState {
+  isError: boolean;
   id: number;
+  title: string;
   message: string;
 }
 
-const createInitialState = Record<LoadingState>({
-  isLoading: false,
+export const createInitialState = Record<ErrorState>({
+  isError: false,
   id: NaN,
+  title: '',
   message: '',
 });
 
-const reducer = createReducer<Record<LoadingState>, Action>(
-  createInitialState(),
-)
+const reducre = createReducer<Record<ErrorState>, Action>(createInitialState())
   .handleAction(action.occur, (state, { payload }) => {
     return state
-      .set('isLoading', true)
+      .set('isError', true)
       .set('id', payload.id)
+      .set('title', payload.title)
       .set('message', payload.message);
   })
   .handleAction(action.release, () => {
     return createInitialState();
   });
 
-export default reducer;
+export default reducre;

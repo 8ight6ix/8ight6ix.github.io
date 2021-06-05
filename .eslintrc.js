@@ -24,6 +24,8 @@ module.exports = {
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
     'import/extensions': 0,
+    'import/prefer-default-export': 0,
+    'no-underscore-dangle': 0,
     'no-use-before-define': 0,
     'prettier/prettier': 0,
     'react/jsx-filename-extension': [

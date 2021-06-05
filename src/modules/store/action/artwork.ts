@@ -1,5 +1,5 @@
 import { createAction, ActionType } from 'typesafe-actions';
-import { ArtworkData } from 'modules/api-handler/artwork';
+import ArtworkData from 'modules/api-handler/model/artwork-data';
 
 export const type = {
   INITIALIZE: 'artwork/INITIALIZE',

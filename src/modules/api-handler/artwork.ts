@@ -1,15 +1,9 @@
 import axios from 'axios';
+
 import { PATH } from 'constant';
+import ArtworkData, { RowData } from 'modules/api-handler/model/artwork-data';
 
-export interface ArtworkData {
-  name: string;
-  creator: string;
-  date: string;
-  type: string;
-  keyword: string[];
-  description: string;
-  path: string;
-}
-
-export const getArtworkList = () =>
-  axios(`${PATH.artworks}/index.json`).then((res): ArtworkData[] => res.data);
+export const getDataList = () =>
+  axios
+    .get<RowData[]>(`${PATH.artworks}/index.json`)
+    .then((res) => res.data.map((row) => new ArtworkData(row)));

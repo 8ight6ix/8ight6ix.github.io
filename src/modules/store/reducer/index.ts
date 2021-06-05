@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 
-import artkworkReducer from 'modules/models/reducer/artwork';
+import artkworkReducer from 'modules/store/reducer/artwork';
 
 const rootReducer = combineReducers({ artkworkReducer });
 
 export default rootReducer;
-export type rootReducer = ReturnType<typeof rootReducer>;
+export type RootReducer = ReturnType<typeof rootReducer>;
