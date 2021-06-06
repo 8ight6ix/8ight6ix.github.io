@@ -5,7 +5,7 @@ import { CONFIG } from 'constant';
 import { fromArtworkData } from 'modules/util/date';
 import { makeRandomStr } from 'modules/util/string';
 
-export interface Item {
+export interface Artwork {
   id: string;
   type: string;
   title: string;
@@ -17,9 +17,9 @@ export interface Item {
   thumbnail: string;
 }
 
-export type ArtworkType = Record<Item>;
+export type ArtworkType = Record<Artwork>;
 
-const Artwork = Record<Item>({
+const ArtworkRecord = Record<Artwork>({
   id: makeRandomStr(12),
   type: CONFIG.artworkDefaultType,
   title: CONFIG.artworkDefaultTitle,
@@ -31,4 +31,4 @@ const Artwork = Record<Item>({
   thumbnail: '',
 });
 
-export default Artwork;
+export default ArtworkRecord;

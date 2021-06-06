@@ -10,7 +10,9 @@ const config: Config = {
   artworkDefaultDate: '0000.0.0', // 작품 디폰트 제작 시기
   artworkDefaultCreator: '작가 미상', // 작품 디폴트 작가
   artworkDefaultDescription: '설명 없음', // 작품 디폴트 설명
-  artworkDefaultPath: '/src/artworks/404.html', // 작품 디폵트 경로
+  artworkDefaultPath: '/src/artworks/404.html', // 작품 폴트 경로
+
+  cardListGap: 20, // 카드 간격
 };
 
 export interface Config {
@@ -18,12 +20,15 @@ export interface Config {
   artworkImprotDateTimezone: string;
   artworkImportDateFromat: string;
   artworkViewDateFormat: string;
+
   artworkDefaultType: string;
   artworkDefaultTitle: string;
   artworkDefaultDate: string;
   artworkDefaultCreator: string;
   artworkDefaultDescription: string;
   artworkDefaultPath: string;
+
+  cardListGap: number;
 }
 
 export default config;
