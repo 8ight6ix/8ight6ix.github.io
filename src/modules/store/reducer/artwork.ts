@@ -20,13 +20,14 @@ const createInitialState = Record<State>({
 const converData = (data: ArtworkData) =>
   Artwork({
     id: data.id || makeRandomStr(12),
-    name: data.name ?? undefined,
-    creator: data.creator ?? undefined,
+    type: data.type,
+    title: data.title,
     date: data.date ? fromArtworkData(data.date) : undefined,
-    type: data.type ?? undefined,
+    creator: data.creator,
+    description: data.description,
     keyword: Array.isArray(data.keyword) ? List(data.keyword) : undefined,
-    description: data.description ?? undefined,
-    path: data.path ?? undefined,
+    path: data.path,
+    thumbnail: data.thumbnail,
   });
 
 const reducer = createReducer<Record<State>, Action>(createInitialState())

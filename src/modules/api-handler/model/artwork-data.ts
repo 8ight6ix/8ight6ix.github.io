@@ -1,72 +1,80 @@
 export interface RowData {
   id: string;
-  name: string;
-  creator: string;
-  date: string;
   type: string;
-  keyword: string[];
+  title: string;
+  date: string;
+  creator: string;
   description: string;
+  keyword: string[];
   path: string;
+  thumbnail: string;
 }
 
 class ArtworkData {
   private _id: string;
 
-  private _name: string;
+  private _type: string;
 
-  private _creator: string;
+  private _title: string;
 
   private _date: string;
 
-  private _type: string;
-
-  private _keyword: string[];
+  private _creator: string;
 
   private _description: string;
 
+  private _keyword: string[];
+
   private _path: string;
+
+  private _thumbnail: string;
 
   constructor(data: RowData) {
     this._id = data.id;
-    this._name = data.name;
-    this._creator = data.creator;
-    this._date = data.date;
     this._type = data.type;
-    this._keyword = [...data.keyword];
+    this._title = data.title;
+    this._date = data.date;
+    this._creator = data.creator;
     this._description = data.description;
+    this._keyword = [...data.keyword];
     this._path = data.path;
+    this._thumbnail = data.thumbnail;
   }
 
   get id() {
     return this._id;
   }
 
-  get name() {
-    return this._name;
+  get type() {
+    return this._type;
   }
 
-  get creator() {
-    return this._creator;
+  get title() {
+    return this._title;
   }
 
   get date() {
     return this._date;
   }
 
-  get type() {
-    return this._type;
-  }
-
-  get keyword() {
-    return [...this._keyword];
+  get creator() {
+    return this._creator;
   }
 
   get description() {
     return this._description;
   }
 
+  get keyword() {
+    return [...this._keyword];
+  }
+
   get path() {
     return this._path;
+  }
+
+  get thumbnail() {
+    return this._thumbnail;
   }
 }
 

@@ -5,10 +5,10 @@ const config: Config = {
   artworkImportDateFromat: 'YYYY.M.D', // 작품 로우 데이터 터임 포멧
   artworkViewDateFormat: 'YYYY. MM. DD', // 화면에 보여지는 작품 데이터 타임 포멧
 
-  artworkDefaultTitle: '무제', // 작품 디폴트 제목
-  artworkDefaultCreator: '작가 미상', // 작품 디폴트 작가
-  artworkDefaultDate: '0000.0.0', // 작품 디폰트 제작 시기
   artworkDefaultType: '미정', // 작품 지폴트 타입
+  artworkDefaultTitle: '무제', // 작품 디폴트 제목
+  artworkDefaultDate: '0000.0.0', // 작품 디폰트 제작 시기
+  artworkDefaultCreator: '작가 미상', // 작품 디폴트 작가
   artworkDefaultDescription: '설명 없음', // 작품 디폴트 설명
   artworkDefaultPath: '/src/artworks/404.html', // 작품 디폵트 경로
 };
@@ -18,10 +18,10 @@ export interface Config {
   artworkImprotDateTimezone: string;
   artworkImportDateFromat: string;
   artworkViewDateFormat: string;
-  artworkDefaultTitle: string;
-  artworkDefaultCreator: string;
-  artworkDefaultDate: string;
   artworkDefaultType: string;
+  artworkDefaultTitle: string;
+  artworkDefaultDate: string;
+  artworkDefaultCreator: string;
   artworkDefaultDescription: string;
   artworkDefaultPath: string;
 }

@@ -1,32 +1,79 @@
 [
   {
     "id": "SAMPLE-ID-01",
-    "name": "Sample Work 01",
-    "creator": "Unknown",
-    "date": "2020.6.3",
     "type": "Sample",
-    "keyword": ["Test", "Sample"],
+    "title": "Sample Work 01",
+    "date": "2020.6.3",
+    "creator": "Unknown",
     "description": "웹 갤러리 페이지 개발을 위한 첫번째 미리보기 샘플입니다.",
-    "path": "/artworks/smaple01.html"
+    "keyword": ["Test", "Sample"],
+    "path": "/artworks/smaple01",
+    "thumbnail": "/artworks/sample01/thumbnail.png"
   },
   {
     "id": "SAMPLE-ID-02",
-    "name": "Sample Work 02",
-    "creator": "Unknown",
-    "date": "2020.6.3",
     "type": "Sample",
-    "keyword": ["Test", "Sample"],
+    "title": "Sample Work 02",
+    "date": "2020.6.3",
+    "creator": "Unknown",
     "description": "웹 갤러리 페이지 개발을 위한 두번째 미리보기 샘플입니다.",
-    "path": "/artworks/smaple02.html"
+    "keyword": ["Test", "Sample"],
+    "path": "/artworks/smaple02",
+    "thumbnail": "/artworks/sample02/thumbnail.png"
   },
   {
-    "id": "SAMPLE-ID-02",
-    "name": "Sample Work 03",
-    "creator": "Unknown",
-    "date": "2020.6.3",
+    "id": "SAMPLE-ID-03",
     "type": "Sample",
-    "keyword": ["Test", "Sample"],
+    "title": "Sample Work 03",
+    "date": "2020.6.3",
+    "creator": "Unknown",
     "description": "웹 갤러리 페이지 개발을 위한 세번째 미리보기 샘플입니다.",
-    "path": "/artworks/smaple03.html"
+    "keyword": ["Test", "Sample"],
+    "path": "/artworks/smaple03",
+    "thumbnail": "/artworks/sample03/thumbnail.png"
+  },
+  {
+    "id": "SAMPLE-ID-04",
+    "type": "Sample",
+    "title": "Sample Work 04",
+    "date": "2020.6.3",
+    "creator": "Unknown",
+    "description": "웹 갤러리 페이지 개발을 위한 네번째 미리보기 샘플입니다.",
+    "keyword": ["Test", "Sample"],
+    "path": "/artworks/smaple04",
+    "thumbnail": "/artworks/sample04/thumbnail.png"
+  },
+  {
+    "id": "SAMPLE-ID-05",
+    "type": "Sample",
+    "title": "Sample Work 05",
+    "date": "2020.6.3",
+    "creator": "Unknown",
+    "description": "웹 갤러리 페이지 개발을 위한 다섯번째 미리보기 샘플입니다.",
+    "keyword": ["Test", "Sample"],
+    "path": "/artworks/smaple05",
+    "thumbnail": "/artworks/sample05/thumbnail.png"
+  },
+  {
+    "id": "SAMPLE-ID-06",
+    "type": "Sample",
+    "title": "Sample Work 06",
+    "date": "2020.6.3",
+    "creator": "Unknown",
+    "description": "웹 갤러리 페이지 개발을 위한 여섯번째 미리보기 샘플입니다.",
+    "keyword": ["Test", "Sample"],
+    "path": "/artworks/smaple06",
+    "thumbnail": "/artworks/sample06/thumbnail.png"
+  },
+  {
+    "id": "SAMPLE-ID-07",
+    "type": "Sample",
+    "title": "Sample Work 07",
+    "date": "2020.6.3",
+    "creator": "Unknown",
+    "description": "웹 갤러리 페이지 개발을 위한 일곱번째 미리보기 샘플입니다.",
+    "keyword": ["Test", "Sample"],
+    "path": "/artworks/smaple07",
+    "thumbnail": "/artworks/sample07/thumbnail.png"
   }
 ]

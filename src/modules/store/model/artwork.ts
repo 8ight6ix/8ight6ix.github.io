@@ -7,26 +7,28 @@ import { makeRandomStr } from 'modules/util/string';
 
 export interface Item {
   id: string;
-  name: string;
-  creator: string;
-  date: moment.Moment;
   type: string;
-  keyword: List<string>;
+  title: string;
+  date: moment.Moment;
+  creator: string;
   description: string;
+  keyword: List<string>;
   path: string;
+  thumbnail: string;
 }
 
 export type ArtworkType = Record<Item>;
 
 const Artwork = Record<Item>({
   id: makeRandomStr(12),
-  name: CONFIG.artworkDefaultTitle,
-  creator: CONFIG.artworkDefaultDescription,
-  date: fromArtworkData(CONFIG.artworkDefaultDate),
   type: CONFIG.artworkDefaultType,
-  keyword: List(),
+  title: CONFIG.artworkDefaultTitle,
+  date: fromArtworkData(CONFIG.artworkDefaultDate),
+  creator: CONFIG.artworkDefaultDescription,
   description: CONFIG.artworkDefaultDescription,
+  keyword: List(),
   path: CONFIG.artworkDefaultPath,
+  thumbnail: '',
 });
 
 export default Artwork;
