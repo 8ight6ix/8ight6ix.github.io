@@ -1,0 +1,24 @@
+$background: map-get($colors, 'background-white');
+
+.body {
+  min-height: 100vh;
+  background-color: $background;
+
+  @include width-with-margin(100%, 16px, 16px);
+
+  @include respond-to('small') {
+    @include width-with-margin(100%, 32px, 32px);
+  }
+
+  @include respond-to('regular') {
+    @include width-with-center(840px);
+  }
+
+  @include respond-to('medium') {
+    @include width-with-margin(100%, 200px, 200px);
+  }
+
+  @include respond-to('large') {
+    @include width-with-center(1040px);
+  }
+}
