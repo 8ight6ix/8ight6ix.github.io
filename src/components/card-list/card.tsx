@@ -1,6 +1,6 @@
 /* eslint-disable react/require-default-props */
 
-import React, { useMemo, useRef, useEffect } from 'react';
+import React, { useMemo, useRef, useEffect, useCallback } from 'react';
 import classNames from 'classnames/bind';
 
 import { ArtworkJS } from 'modules/store/model/artwork';
@@ -32,8 +32,20 @@ function Card({ draw, opts, width, x, y }: CardProps) {
     if (draw) draw(opts, $card.current?.clientHeight ?? 0);
   }, [draw]);
 
+  const onClick = useCallback(() => {
+    window.open(opts.path, '_blank')?.focus();
+  }, []);
+
   return (
-    <div ref={$card} className={className} style={style}>
+    <div
+      ref={$card}
+      className={className}
+      style={style}
+      role="button"
+      tabIndex={0}
+      onClick={onClick}
+      onKeyPress={onClick}
+    >
       <Thumbnail title={opts.title} width={width} src={opts.thumbnail} />
       <Content
         title={opts.title}

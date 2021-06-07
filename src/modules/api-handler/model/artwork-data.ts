@@ -36,7 +36,7 @@ class ArtworkData {
     this._date = data.date;
     this._creator = data.creator;
     this._description = data.description;
-    this._keyword = [...data.keyword];
+    this._keyword = Array.isArray(data.keyword) ? [...data.keyword] : [];
     this._path = data.path;
     this._thumbnail = data.thumbnail;
   }
