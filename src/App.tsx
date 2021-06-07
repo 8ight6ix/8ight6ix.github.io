@@ -1,12 +1,15 @@
 import React, { useEffect, useMemo } from 'react';
+import classNames from 'classnames/bind';
 
-import Artwork from 'modules/store/hook/artwork';
+import useArtwork from 'modules/store/hook/useArtwork';
+import styleBase from 'styles/base/base.module.scss';
 import Body from 'section/body';
-import cx from 'styles';
+
+const cxBase = classNames.bind(styleBase);
 
 function App() {
-  const artwork = Artwork();
-  const className = useMemo(() => cx('App'), []);
+  const artwork = useArtwork();
+  const className = useMemo(() => cxBase('App'), []);
 
   useEffect(() => {
     artwork.initialize();

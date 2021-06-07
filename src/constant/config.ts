@@ -13,6 +13,7 @@ const config: Config = {
   artworkDefaultPath: '/src/artworks/404.html', // 작품 폴트 경로
 
   cardListGap: 20, // 카드 간격
+  thumbnailRate: 1.6, // Thumbnail 가로 세로 비율
 };
 
 export interface Config {
@@ -29,6 +30,7 @@ export interface Config {
   artworkDefaultPath: string;
 
   cardListGap: number;
+  thumbnailRate: number;
 }
 
 export default config;

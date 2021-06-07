@@ -1,7 +1,12 @@
+@import '../util/vaiable';
+@import '../util/mixin';
+
 $background: map-get($colors, 'background-white');
 
 .body {
   min-height: 100vh;
+  box-sizing: border-box;
+  padding: 20px 0px;
   background-color: $background;
 
   @include width-with-margin(100%, 16px, 16px);

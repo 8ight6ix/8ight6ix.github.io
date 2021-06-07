@@ -17,6 +17,18 @@ export interface Artwork {
   thumbnail: string;
 }
 
+export interface ArtworkJS {
+  id: string;
+  type: string;
+  title: string;
+  date: moment.Moment;
+  creator: string;
+  description: string;
+  keyword: string[];
+  path: string;
+  thumbnail: string;
+}
+
 export type ArtworkType = Record<Artwork>;
 
 const ArtworkRecord = Record<Artwork>({

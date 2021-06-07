@@ -1,11 +1,15 @@
 import React, { useMemo, useRef, useEffect, useState } from 'react';
+import classNames from 'classnames/bind';
 import { List } from 'immutable';
 
 import { CONFIG } from 'constant';
-import cx from 'styles';
+import styleBody from 'styles/layout/body.module.scss';
+import CardList from 'components/card-list';
+
+const cxBody = classNames.bind(styleBody);
 
 function Body() {
-  const className = useMemo(() => cx('body'), []);
+  const className = useMemo(() => cxBody('body'), []);
   const $body = useRef<HTMLDivElement>(null);
 
   const [stageWidth, setStageWidth] = useState(0);
@@ -44,7 +48,7 @@ function Body() {
       setColumnCnt(cnt);
       setColumnSize(size);
     }
-  }, [bodyWidth]);
+  }, [bodyWidth, stageWidth]);
 
   // Column 개수와 사이즈가 변하면 Grid 사이즈를 조정합니다.
   useEffect(() => {
@@ -59,7 +63,11 @@ function Body() {
     setGrid(List(list));
   }, [columnCnt, columnSize]);
 
-  return <div ref={$body} className={className} />;
+  return (
+    <div ref={$body} className={className}>
+      <CardList grid={grid} columnSize={columnSize} />
+    </div>
+  );
 }
 
 export default Body;

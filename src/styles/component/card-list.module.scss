@@ -1,0 +1,31 @@
+@import '../util/vaiable';
+
+$background: map-get($colors, 'background-gray-light');
+
+.list {
+  position: relative;
+}
+
+.card {
+  position: absolute;
+  cursor: pointer;
+  box-shadow: 0 1px 1px 0 rgba(66, 66, 66, 0.08),
+    0 1px 3px 1px rgba(66, 66, 66, 0.16);
+
+  &:hover {
+    box-shadow: 0 1px 3px 1px rgba(66, 66, 66, 0.2),
+      0 2px 8px 4px rgba(66, 66, 66, 0.1);
+  }
+}
+
+.thumbnail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: $background;
+
+  & img {
+    width: 100%;
+  }
+}
