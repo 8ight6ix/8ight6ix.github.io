@@ -7,6 +7,7 @@ import { ArtworkJS } from 'modules/store/model/artwork';
 import styleCardList from 'styles/component/card-list.module.scss';
 import Thumbnail from 'components/card-list/thumbnail';
 import Content from 'components/card-list/content';
+import Keyword from 'components/card-list/keywords';
 
 const cxCardList = classNames.bind(styleCardList);
 
@@ -40,6 +41,7 @@ function Card({ draw, opts, width, x, y }: CardProps) {
         creator={opts.creator}
         description={opts.description}
       />
+      <Keyword words={opts.keyword} />
     </div>
   );
 }
