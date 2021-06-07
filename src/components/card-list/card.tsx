@@ -5,7 +5,8 @@ import classNames from 'classnames/bind';
 
 import { ArtworkJS } from 'modules/store/model/artwork';
 import styleCardList from 'styles/component/card-list.module.scss';
-import Thumbnail from './thumbnail';
+import Thumbnail from 'components/card-list/thumbnail';
+import Content from 'components/card-list/content';
 
 const cxCardList = classNames.bind(styleCardList);
 
@@ -33,6 +34,12 @@ function Card({ draw, opts, width, x, y }: CardProps) {
   return (
     <div ref={$card} className={className} style={style}>
       <Thumbnail title={opts.title} width={width} src={opts.thumbnail} />
+      <Content
+        title={opts.title}
+        date={opts.date}
+        creator={opts.creator}
+        description={opts.description}
+      />
     </div>
   );
 }

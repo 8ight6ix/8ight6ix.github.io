@@ -18,6 +18,25 @@ $background: map-get($colors, 'background-gray-light');
   }
 }
 
+.content {
+  padding: 20px 16px;
+
+  & p[id='title'] {
+    margin: 2px 0px;
+    line-height: 1.2;
+  }
+
+  & p[id='sub'] {
+    margin: 8px 0px;
+    line-height: 1.5;
+  }
+
+  & p[id='desc'] {
+    margin: 10px 0px;
+    line-height: 1.5;
+  }
+}
+
 .thumbnail {
   display: flex;
   justify-content: center;
