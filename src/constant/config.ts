@@ -1,5 +1,7 @@
 const config: Config = {
   mode: 'production',
+  title: '8ight6ix',
+  subTitle: 'Artowrk Hub',
 
   artworkImprotDateTimezone: 'Asia/Seoul', // 작품 로우 데이터 터임존
   artworkImportDateFromat: 'YYYY.M.D', // 작품 로우 데이터 터임 포멧
@@ -29,6 +31,9 @@ const config: Config = {
 
 export interface Config {
   mode: 'production' | 'development';
+  title: string;
+  subTitle: string;
+
   artworkImprotDateTimezone: string;
   artworkImportDateFromat: string;
   artworkViewDateFormat: string;

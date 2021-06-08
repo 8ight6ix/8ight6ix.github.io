@@ -1,0 +1,51 @@
+@import '../util/vaiable';
+@import '../util/mixin';
+
+$background: map-get($colors, 'background-black');
+$font-color: map-get($colors, 'font-white');
+$height: map-get($size, 'header-height');
+
+.header {
+  background-color: $background;
+  height: $height;
+
+  & div[id='wrapper'] {
+    display: flex;
+    align-items: flex-end;
+    height: $height;
+    box-sizing: border-box;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    @include width-with-margin(100%, 16px, 16px);
+
+    @include respond-to('small') {
+      @include width-with-margin(100%, 32px, 32px);
+    }
+
+    @include respond-to('regular') {
+      @include width-with-center(840px);
+    }
+
+    @include respond-to('medium') {
+      @include width-with-margin(100%, 200px, 200px);
+    }
+
+    @include respond-to('large') {
+      @include width-with-center(1040px);
+    }
+  }
+
+  & p[id='title'] {
+    margin: 0px 0px 0px 20px;
+    line-height: 24px;
+    color: $font-color;
+  }
+
+  & p[id='sub-title'] {
+    margin: 0px 0px 0px 8px;
+    line-height: 1.25;
+    color: $font-color;
+    opacity: 0.38;
+  }
+}
