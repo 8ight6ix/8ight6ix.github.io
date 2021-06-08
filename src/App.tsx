@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useMemo } from 'react';
+import classNames from 'classnames/bind';
+
+import useArtwork from 'modules/hook/useArtwork';
+import styleBase from 'styles/base/base.module.scss';
+import Body from 'section/body';
+
+const cxBase = classNames.bind(styleBase);
 
 function App() {
+  const artwork = useArtwork();
+  const className = useMemo(() => cxBase('App'), []);
+
+  useEffect(() => {
+    artwork.initialize();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={className}>
+      <Body />
     </div>
   );
 }

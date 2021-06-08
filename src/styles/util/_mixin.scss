@@ -1,0 +1,29 @@
+@mixin respond-to($breakpoint) {
+  $raw-query: map-get($breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(
+      type-of($raw-query) == 'string',
+      unquote($raw-query),
+      inspect($raw-query)
+    );
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error 'No value found for `#{$breakpoint}`.';
+  }
+}
+
+@mixin width-with-margin($width, $marginLeft, $marginRight) {
+  width: calc(#{$width} - #{$marginLeft} - #{$marginRight});
+  margin-left: $marginLeft;
+  margin-right: $marginRight;
+}
+
+@mixin width-with-center($width) {
+  width: $width;
+  margin-left: auto;
+  margin-right: auto;
+}

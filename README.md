@@ -1,46 +1,64 @@
-# Getting Started with Create React App
+# 8ight6ix Artwork Hub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+8ight6ix 웹 아트 갤러리 페이지입니다. [웹 페이지 이동하기](https://8ight6ix.github.io)
 
-## Available Scripts
+## 1. Local Test
 
-In the project directory, you can run:
+```bash
+$ npm install
+$ npm start
+```
 
-### `npm start`
+## 2. Deploy
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+$ npm install
+$ npm run deploy
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 3. 작품 추가
 
-### `npm test`
+### 3.1 파일 옮기기
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`/public/artworks/` 내부에 작품 파일을 넣을 디렉토리를 생성후, 해당 디렉토리 내부로 파일들을 옮깁니다.
 
-### `npm run build`
+```
+public/
+  artworks/
+    smaple-artwork/
+      index.html
+      image/
+        image01.png
+        image02.png
+        thumbnail.png
+      js/
+        script01.js
+        script02.js
+      css/
+        style.css
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3.2 JSON 파일 수정
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`/public/artworks/index.json` 파일에 작품 정보를 추가합니다. 미기재 항목은 Default 값으로 대체됩니다. (`thubnail`과 `keywortd`는 Default가 존재하지 않습니다)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```json
+{
+  "id": "SAMPLE-ID-07", // 유니크 아이디
+  "type": "Sample", // 현재 미사용
+  "title": "Sample Work 07", // 제목
+  "date": "2020.6.3", // 작품 생성 날짜 (YYYY.M.D)
+  "creator": "Unknown", // 작가
+  "description": "This is artwork sample description", // 설명
+  "keyword": ["Node-sass"], // 키워드
+  "path": "/artworks/sample07", // 작품 메인 HTML 파일 경로
+  "thumbnail": "/artworks/sample07/thumbnail.png" // 섬네일 이미지 경로
+}
+```
 
-### `npm run eject`
+### 3.3 Deploy
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+$ npm install
+$ npm run deploy
+```
