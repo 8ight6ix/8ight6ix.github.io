@@ -1,5 +1,5 @@
 const config: Config = {
-  mode: 'development',
+  mode: 'production',
 
   artworkImprotDateTimezone: 'Asia/Seoul', // 작품 로우 데이터 터임존
   artworkImportDateFromat: 'YYYY.M.D', // 작품 로우 데이터 터임 포멧
