@@ -5,7 +5,6 @@ import { List } from 'immutable';
 import { CONFIG } from 'constant';
 import Heap from 'modules/util/heap';
 import useArtwork from 'modules/hook/useArtwork';
-import { ArtworkJS } from 'modules/store/model/artwork';
 import Card from 'components/card-list/card';
 import styleCardList from 'styles/component/card-list.module.scss';
 
@@ -17,9 +16,9 @@ interface CardListProps {
   columnCnt: number;
 }
 
-interface DrawData {
-  item: ArtworkJS;
-  height: number;
+interface ViewItems {
+  [index: number]: number;
+  length: number;
 }
 
 const INVISIBEL_X = -99999;
@@ -35,10 +34,10 @@ function CardList({ grid, columnSize, columnCnt }: CardListProps) {
   const artwork = useArtwork();
 
   const items = useMemo(() => artwork.getItems(), [artwork.getItems]); // 전체 카드 데이터
-  const pendingItems = useMemo<DrawData[]>(
-    () => [],
+  const viewItems = useMemo<ViewItems>(
+    () => ({ length: 0 }),
     [grid, columnSize, columnCnt, items],
-  ); // 화면에 그려지길 대기중인 카드 데이터
+  ); // 화면에 그려지질 카드 데이터
 
   const columns = useMemo<number[]>(() => Array(columnCnt), [columnCnt]); // 각 Columns의 현재 높이를 저장
   const heap = useMemo(() => new Heap(createCompFunc(columns)), [columns]); // 가장 낮은 높이의 Cloumn을 찾기위한 힙
@@ -51,18 +50,20 @@ function CardList({ grid, columnSize, columnCnt }: CardListProps) {
     heap.claer();
     columns.fill(0).forEach((_, i) => heap.add(i));
 
-    const $newVisibleCards = pendingItems.map(({ item, height }) => {
-      const index = heap.poll() as number;
-      const x = grid.get(index) ?? INVISIBEL_X;
-      const y = columns[index] ?? INVISIBEL_Y;
+    const $newVisibleCards = Array.from(viewItems).map((height, index) => {
+      const item = items[index];
+      const column = heap.poll() as number;
+      const x = grid.get(column) ?? INVISIBEL_X;
+      const y = columns[column] ?? INVISIBEL_Y;
 
-      columns[index] += height + CONFIG.cardListGap;
-      heap.add(index);
+      columns[column] += height + CONFIG.cardListGap;
+      heap.add(column);
 
       return (
         <Card
           key={`visible-${item.id}`}
-          item={item}
+          index={index}
+          opts={item}
           width={columnSize}
           x={x}
           y={y}
@@ -73,24 +74,26 @@ function CardList({ grid, columnSize, columnCnt }: CardListProps) {
     const height = Math.max(...columns) - CONFIG.cardListGap;
     setVisibleCards($newVisibleCards);
     setStyle({ height: Number.isFinite(height) ? height : 0 });
-  }, [pendingItems, columns, heap]);
+  }, [viewItems, columns, heap]);
 
   // 화면에 그릴 카드 데이터를 준비하는 함수입니다.
   const readyToDraw = useCallback(
-    (item: ArtworkJS, height: number) => {
-      pendingItems.push({ item, height });
-      if (pendingItems.length === items.length) draw();
+    (index: number, height: number) => {
+      if (viewItems[index] === undefined) viewItems.length += 1;
+      viewItems[index] = height;
+      if (viewItems.length === items.length) draw();
     },
-    [pendingItems, items, draw],
+    [viewItems, items, draw],
   );
 
   // 화면에 그릴 카드의 수치를 확인하기위해, 보이지 않는 카드를 생성합니다.
   const $hiddenCards = useMemo<JSX.Element[]>(() => {
-    return items.map((item) => (
+    return items.map((item, index) => (
       <Card
         key={`hidden-${item.id}`}
         draw={readyToDraw}
-        item={item}
+        index={index}
+        opts={item}
         width={columnSize}
         x={INVISIBEL_X}
         y={INVISIBEL_Y}
