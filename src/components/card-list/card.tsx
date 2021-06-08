@@ -12,28 +12,28 @@ import Keyword from 'components/card-list/keywords';
 const cxCardList = classNames.bind(styleCardList);
 
 interface CardProps {
-  draw?: (opts: ArtworkJS, height: number) => void;
-  opts: ArtworkJS;
+  draw?: (item: ArtworkJS, height: number) => void;
+  item: ArtworkJS;
   width: number;
   x: number;
   y: number;
 }
 
-function Card({ draw, opts, width, x, y }: CardProps) {
+function Card({ draw, item, width, x, y }: CardProps) {
   const className = useMemo(() => cxCardList('card'), []);
   const $card = useRef<HTMLDivElement>(null);
   const style = useMemo(
     () => ({ width, transform: `translate(${x}px, ${y}px)` }),
-    [width, x],
+    [width, x, y],
   );
 
-  // 높이 측정용 Componenet의 높이가 변하면 draw를 요청합니다.
+  // 높이 측정용 Componenet의 너비가 변하면 draw를 요청합니다.
   useEffect(() => {
-    if (draw) draw(opts, $card.current?.clientHeight ?? 0);
-  }, [draw]);
+    if (draw) draw(item, $card.current?.clientHeight ?? 0);
+  }, [style]);
 
   const onClick = useCallback(() => {
-    window.open(opts.path, '_blank')?.focus();
+    window.open(item.path, '_blank')?.focus();
   }, []);
 
   return (
@@ -46,14 +46,14 @@ function Card({ draw, opts, width, x, y }: CardProps) {
       onClick={onClick}
       onKeyPress={onClick}
     >
-      <Thumbnail title={opts.title} width={width} src={opts.thumbnail} />
+      <Thumbnail title={item.title} width={width} src={item.thumbnail} />
       <Content
-        title={opts.title}
-        date={opts.date}
-        creator={opts.creator}
-        description={opts.description}
+        title={item.title}
+        date={item.date}
+        creator={item.creator}
+        description={item.description}
       />
-      <Keyword words={opts.keyword} />
+      <Keyword words={item.keyword} />
     </div>
   );
 }

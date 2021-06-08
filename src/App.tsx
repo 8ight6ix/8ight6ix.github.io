@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo } from 'react';
 import classNames from 'classnames/bind';
 
-import useArtwork from 'modules/store/hook/useArtwork';
+import useArtwork from 'modules/hook/useArtwork';
 import styleBase from 'styles/base/base.module.scss';
 import Body from 'section/body';
 

@@ -14,6 +14,17 @@ const config: Config = {
 
   cardListGap: 20, // 카드 간격
   thumbnailRate: 1.6, // Thumbnail 가로 세로 비율
+
+  windowLarge: 1440,
+  windowMedium: 1240,
+  windowRegular: 905,
+  windowSmall: 600,
+
+  girdCntLarge: 4,
+  gridCntMedium: 3,
+  gridCntRegular: 2,
+  gridCntSmall: 2,
+  gridCntDefault: 1,
 };
 
 export interface Config {
@@ -31,6 +42,17 @@ export interface Config {
 
   cardListGap: number;
   thumbnailRate: number;
+
+  windowLarge: number;
+  windowMedium: number;
+  windowRegular: number;
+  windowSmall: number;
+
+  girdCntLarge: number;
+  gridCntMedium: number;
+  gridCntRegular: number;
+  gridCntSmall: number;
+  gridCntDefault: number;
 }
 
 export default config;
