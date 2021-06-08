@@ -1,0 +1,20 @@
+$breakpoints: (
+  'large': (
+    min-width: 1440px,
+  ),
+  'medium': (
+    min-width: 1240px,
+  ),
+  'regular': (
+    min-width: 905px,
+  ),
+  'small': (
+    min-width: 600px,
+  ),
+);
+
+$colors: (
+  'background-gray': #e2e2e2,
+  'background-gray-light': #ededed,
+  'background-white': #ffffff,
+);

@@ -1,0 +1,75 @@
+@import '../util/vaiable';
+
+$background: map-get($colors, 'background-gray-light');
+$keyword-color: map-get($colors, 'background-gray-light');
+
+.list {
+  position: relative;
+}
+
+.card {
+  position: absolute;
+  cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 1px 0 rgba(66, 66, 66, 0.08),
+    0 1px 3px 1px rgba(66, 66, 66, 0.16);
+
+  &:hover {
+    box-shadow: 0 1px 3px 1px rgba(66, 66, 66, 0.2),
+      0 2px 8px 4px rgba(66, 66, 66, 0.1);
+  }
+}
+
+.content {
+  padding: 20px 16px;
+
+  & p[id='title'] {
+    opacity: 87%;
+    margin: 2px 0px;
+    line-height: 1.2;
+  }
+
+  & p[id='sub'] {
+    opacity: 38%;
+    margin: 8px 0px;
+    line-height: 1.5;
+  }
+
+  & p[id='desc'] {
+    opacity: 60%;
+    margin: 10px 0px;
+    line-height: 1.5;
+  }
+}
+
+.thumbnail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: $background;
+
+  & img {
+    width: 100%;
+  }
+}
+
+.keywords {
+  padding: 0px 16px 20px 16px;
+
+  & hr {
+    opacity: 38%;
+    margin: 0px 0px 6px 0px;
+  }
+
+  & span {
+    display: inline-block;
+    line-height: 32px;
+    padding: 0px 12px;
+    margin-top: 8px;
+    margin-right: 8px;
+    background-color: $keyword-color;
+    border-radius: 16px;
+  }
+}
