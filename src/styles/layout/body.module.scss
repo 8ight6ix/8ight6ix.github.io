@@ -2,9 +2,10 @@
 @import '../util/mixin';
 
 $background: map-get($colors, 'background-white');
+$header-height: map-get($size, 'header-height');
 
 .body {
-  min-height: 100vh;
+  min-height: calc(100vh - #{$header-height});
   box-sizing: border-box;
   padding: 20px 0px;
   background-color: $background;

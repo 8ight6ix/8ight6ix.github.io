@@ -14,7 +14,13 @@ $breakpoints: (
 );
 
 $colors: (
+  'background-black': #212121,
   'background-gray': #e2e2e2,
   'background-gray-light': #ededed,
   'background-white': #ffffff,
+  'font-white': #ffffff,
+);
+
+$size: (
+  'header-height': 56px,
 );
