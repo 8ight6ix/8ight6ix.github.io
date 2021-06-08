@@ -25,19 +25,19 @@ $keyword-color: map-get($colors, 'background-gray-light');
   padding: 20px 16px;
 
   & p[id='title'] {
-    opacity: 87%;
+    opacity: 0.87;
     margin: 2px 0px;
     line-height: 1.2;
   }
 
   & p[id='sub'] {
-    opacity: 38%;
+    opacity: 0.38;
     margin: 8px 0px;
     line-height: 1.5;
   }
 
   & p[id='desc'] {
-    opacity: 60%;
+    opacity: 0.6;
     margin: 10px 0px;
     line-height: 1.5;
   }
@@ -59,7 +59,7 @@ $keyword-color: map-get($colors, 'background-gray-light');
   padding: 0px 16px 20px 16px;
 
   & hr {
-    opacity: 38%;
+    opacity: 0.38;
     margin: 0px 0px 6px 0px;
   }
 
