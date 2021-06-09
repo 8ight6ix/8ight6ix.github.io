@@ -30,8 +30,8 @@ function Card({ draw, index, opts, width, x, y }: CardProps) {
 
   // 높이 측정용 Componenet의 너비가 변하면 draw를 요청합니다.
   useEffect(() => {
-    if (draw) draw(index, $card.current?.clientHeight ?? 0);
-  }, [$card.current?.clientHeight, $card.current?.clientWidth]);
+    if (draw) draw(index, $card.current?.offsetHeight ?? 0);
+  }, [$card.current?.offsetHeight, $card.current?.offsetWidth]);
 
   const onClick = useCallback(() => {
     window.open(opts.path, '_blank')?.focus();
