@@ -12,7 +12,7 @@ function Body() {
   const className = useMemo(() => cxBody('body'), []);
   const $body = useRef<HTMLDivElement>(null);
 
-  const { width } = useResizeDetector({ ref: $body });
+  const { width } = useResizeDetector({ ref: $body, skipOnMount: false });
   const grid = useDynamicGrid({ girdWidth: width });
 
   return (
