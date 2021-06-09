@@ -9,13 +9,16 @@ $keyword-color: map-get($colors, 'background-gray-light');
 
 .card {
   position: absolute;
-  cursor: pointer;
-  border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 1px 1px 0 rgba(66, 66, 66, 0.08),
-    0 1px 3px 1px rgba(66, 66, 66, 0.16);
 
-  &:hover {
+  &[data-card-type='visible'] {
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px 0 rgba(66, 66, 66, 0.08),
+      0 1px 3px 1px rgba(66, 66, 66, 0.16);
+  }
+
+  &[data-card-type='visible']:hover {
     box-shadow: 0 1px 3px 1px rgba(66, 66, 66, 0.2),
       0 2px 8px 4px rgba(66, 66, 66, 0.1);
   }

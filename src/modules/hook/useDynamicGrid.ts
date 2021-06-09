@@ -4,10 +4,10 @@ import { List } from 'immutable';
 import { CONFIG } from 'constant';
 
 interface useDynamicGridProps {
-  girdWidth: number;
+  girdWidth: number | undefined;
 }
 
-function useDynamicGrid({ girdWidth }: useDynamicGridProps) {
+function useDynamicGrid({ girdWidth = 0 }: useDynamicGridProps) {
   const [stageWidth, setStageWidth] = useState(document.body.clientWidth);
 
   const columnCnt = useMemo(() => {
