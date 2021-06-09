@@ -42,7 +42,7 @@ public/
 
 `/public/artworks/index.json` 파일에 작품 정보를 추가합니다. 미기재 항목은 Default 값으로 대체됩니다. (`thubnail`과 `keywortd`는 Default가 존재하지 않습니다)
 
-```json
+```
 {
   "id": "SAMPLE-ID-07", // 유니크 아이디
   "type": "Sample", // 현재 미사용
