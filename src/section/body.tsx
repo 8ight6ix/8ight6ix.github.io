@@ -2,6 +2,7 @@ import React, { useMemo, useRef } from 'react';
 import classNames from 'classnames/bind';
 
 import useDynamicGrid from 'modules/hook/useDynamicGrid';
+import useResizeDetector from 'modules/hook/useResizeDetector';
 import styleBody from 'styles/layout/body.module.scss';
 import CardList from 'components/card-list';
 
@@ -11,7 +12,8 @@ function Body() {
   const className = useMemo(() => cxBody('body'), []);
   const $body = useRef<HTMLDivElement>(null);
 
-  const grid = useDynamicGrid({ girdWidth: $body.current?.clientWidth ?? 0 });
+  const { width } = useResizeDetector({ ref: $body });
+  const grid = useDynamicGrid({ girdWidth: width });
 
   return (
     <div ref={$body} className={className}>
