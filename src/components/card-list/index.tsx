@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState, useEffect } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import classNames from 'classnames/bind';
 import { List } from 'immutable';
 
@@ -88,6 +88,7 @@ function CardList({ grid, columnSize, columnCnt }: CardListProps) {
 
   // 화면에 그릴 카드의 수치를 확인하기위해, 보이지 않는 카드를 생성합니다.
   const $hiddenCards = useMemo<JSX.Element[]>(() => {
+    if (columnSize === 0) return [];
     return items.map((item, index) => (
       <Card
         key={`hidden-${item.id}`}
@@ -100,11 +101,6 @@ function CardList({ grid, columnSize, columnCnt }: CardListProps) {
       />
     ));
   }, [readyToDraw, columnSize]);
-
-  // 카드를 그리는 과정에서 스크롤 때문에 가로 크기가 틀어지는 것을 방지합니다.
-  useEffect(() => {
-    window.dispatchEvent(new Event('resize'));
-  }, [style]);
 
   return (
     <div className={className} style={style}>

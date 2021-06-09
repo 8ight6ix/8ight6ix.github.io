@@ -23,18 +23,20 @@ interface CardProps {
 
 function Card({ draw, index, opts, width, x, y }: CardProps) {
   const className = useMemo(() => cxCardList('card', 'view'), []);
-  const cardType = useMemo(() => (draw ? 'hidden' : 'visible'), [draw]);
   const $card = useRef<HTMLDivElement>(null);
-  const style = useMemo(
-    () => ({ width, transform: `translate(${x}px, ${y}px)` }),
-    [width, x, y],
-  );
 
-  const { height } = useResizeDetector({ ref: $card });
+  const cardType = useMemo(() => {
+    return !draw && width ? 'visible' : 'hidden';
+  }, [draw, width]);
+  const style = useMemo(() => {
+    return { width, transform: `translate(${x}px, ${y}px)` };
+  }, [width, x, y]);
+
+  const { height } = useResizeDetector({ ref: $card, skipOnMount: !draw });
 
   // 높이 측정용 Componenet의 설정이 변하면 draw를 요청합니다.
   useEffect(() => {
-    if (draw) draw(index, height ?? 0);
+    if (draw && width && height) draw(index, height ?? 0);
   }, [x, y, height]);
 
   const onClick = useCallback(() => {
